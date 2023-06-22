@@ -14,3 +14,11 @@ const std::string& Line::label() const { return _label; }
 
 // _____________________________________________________________________________
 const std::string& Line::color() const { return _color; }
+
+const std::string& Line::mylabel() const { return _myLabel; }
+
+const std::string& Line::backLabel() const {return _backLabel; }
+
+const std::string& Line::from() const {return _from; }
+
+const std::string& Line::to() const {return _to; }

@@ -16,13 +16,21 @@ class Line {
   Line(const std::string& id, const std::string& label,
        const std::string& color)
       : _id(id), _label(label), _color(color) {}
+  Line(const std::string& id, const std::string& label,
+       const std::string& color, const std::string& myLabel, const std::string& backLabel,
+       const std::string& from, const std::string& to)
+      : _id(id), _label(label), _color(color), _myLabel(myLabel), _backLabel(backLabel), _from(from), _to(to) {}
 
   const std::string& id() const;
   const std::string& label() const;
   const std::string& color() const;
+  const std::string& mylabel() const;
+  const std::string& backLabel() const;
+  const std::string& from() const;
+  const std::string& to() const;
 
  private:
-  std::string _id, _label, _color;
+  std::string _id, _label, _color, _myLabel, _backLabel, _from, _to;
 };
 }
 }

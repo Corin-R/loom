@@ -253,7 +253,23 @@ void LineGraph::readFromGeoJson(nlohmann::json::array_t features,
         if (!l) {
           std::string label = line["label"].is_null() ? "" : line["label"];
           std::string color = line["color"];
-          l = new Line(id, label, color);
+
+          std::string myLabel;
+          if(!line["startLabel"].is_null()){
+            myLabel = line["startLabel"];
+          }else{
+            myLabel = "";
+          }
+
+          std::string backLabel;
+          if(!line["backLabel"].is_null()){
+            backLabel = line["backLabel"];
+          }else{
+            backLabel = "";
+          }
+
+
+          l = new Line(id, label, color, myLabel, backLabel, from, to);
           addLine(l);
         }
 

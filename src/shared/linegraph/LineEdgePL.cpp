@@ -88,6 +88,10 @@ util::json::Dict LineEdgePL::getAttrs() const {
     line["id"] = r.line->id();
     line["label"] = r.line->label();
     line["color"] = r.line->color();
+    line["startLabel"] = r.line->mylabel();
+    line["backLabel"] = r.line->backLabel();
+    line["from"] = r.line->from();
+    line["to"] = r.line->to();
     if (!r.style.isNull()) {
       if (r.style.get().getCss().size())
         line["style"] = r.style.get().getCss();
